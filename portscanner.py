@@ -59,7 +59,6 @@ try:
     elif type == "f":
         with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
             for port in range(1, 65536):
-                print("Currently scanning port: " + str(port))
                 executor.submit(scan, ip, port)
         input("Waiting to exit...")
 except Exception:
