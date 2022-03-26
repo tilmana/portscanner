@@ -8,12 +8,6 @@ from pythonping import ping
 
 colorama.init()
 print_lock = threading.Lock()
-
-print("""
-Please ensure you have ran the script with sudo or sudo-like permissions.
-This script may or may not display filtered ports.
-Use NMAP or an equivalent port scanner to confirm results.
-""")
       
 try:
     ip = sys.argv[1]
