@@ -15,7 +15,7 @@ try:
     if type not in ["q", "f"]:
         print("===================================================\n"
               "                    scanner.py                     \n"
-              "  q PORTS 1-1000                   f PORTS 1-65535 \n"
+              "  q PORTS 1-1024                   f PORTS 1-65535 \n"
               "===================================================\n")
         sys.exit()
 except Exception:
@@ -53,7 +53,7 @@ def scan(ipaddr, ipport):
 try:
     if type == "q":
         with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
-            for port in range(1, 1001):
+            for port in range(1, 1025):
                 executor.submit(scan, ip, port)
         input("Waiting to exit...")
     elif type == "f":
